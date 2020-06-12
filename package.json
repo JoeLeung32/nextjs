@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start:local": "next start",
+    "start": "next start -p $PORT",
     "lint": "eslint .",
     "reinstall": "yarn install --force",
     "reset-modules": "rm -rf node_modules/",
