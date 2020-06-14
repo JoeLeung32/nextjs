@@ -2,11 +2,13 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
+import { Container } from 'react-bootstrap'
 import {
     getLearningRecordPostsIds,
     getLearningRecordPost,
-} from '../../../lib/learning-record-posts'
+} from '../../../libs/learning-record-posts'
 import { LearningRecordContentProvider } from '../../../interfaces/learningRecord'
+import { Wrapper } from '../../../styled'
 
 const LearningRecordPostDetails = ({
     postData,
@@ -20,18 +22,22 @@ const LearningRecordPostDetails = ({
             <Head>
                 <title>Next App</title>
             </Head>
-            <div onClick={() => Router.back()}>
-                <a>Go Back</a>
-            </div>
-            <h1>{title}</h1>
-            <p>{date}</p>
-            <div
-                dangerouslySetInnerHTML={{
-                    __html: content
-                        .replace(/\r\n/g, '</p><p>')
-                        .replace(/\n\n/g, '</p><p>'),
-                }}
-            />
+            <Wrapper>
+                <Container>
+                    <div onClick={() => Router.back()}>
+                        <a>Go Back</a>
+                    </div>
+                    <h1>{title}</h1>
+                    <p>{date}</p>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: content
+                                .replace(/\r\n/g, '</p><p>')
+                                .replace(/\n\n/g, '</p><p>'),
+                        }}
+                    />
+                </Container>
+            </Wrapper>
         </>
     )
 }

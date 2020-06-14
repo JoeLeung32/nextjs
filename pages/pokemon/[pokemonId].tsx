@@ -2,8 +2,10 @@ import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Container } from 'react-bootstrap'
 import { PokemonProvider } from '../../interfaces/pokemon'
 import PokemonDetails from '../../components/pokemon/pokemonDetails'
+import { Wrapper } from '../../styled'
 
 const PokemonPage = ({ pokemon }: any) => {
     const capitalize = (text: string) =>
@@ -15,14 +17,18 @@ const PokemonPage = ({ pokemon }: any) => {
             <Head>
                 <title>Next App</title>
             </Head>
-            <Link href={`/`}>
-                <a>Go Back</a>
-            </Link>
-            <h1>
-                <span>#{pokemon.id}</span>{' '}
-                <span>{capitalize(pokemon.name)}</span>
-            </h1>
-            <PokemonDetails pokemon={pokemon} />
+            <Wrapper>
+                <Container>
+                    <Link href={`/`}>
+                        <a>Go Back</a>
+                    </Link>
+                    <h1>
+                        <span>#{pokemon.id}</span>{' '}
+                        <span>{capitalize(pokemon.name)}</span>
+                    </h1>
+                    <PokemonDetails pokemon={pokemon} />
+                </Container>
+            </Wrapper>
         </>
     )
 }

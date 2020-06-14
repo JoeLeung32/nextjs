@@ -1,15 +1,27 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
+@import "~bootstrap";
 
 body {
-    background-color: whitesmoke;
+    min-height: 100vh;
+    position: relative;
 }
 
-a {
-    color: darkblue;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
+#__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
+
+[data-them="themeDark"] {
+    .badge-themed {
+        background-color: theme-color("light");
+        color: theme-color("dark");
+    }
+}
+[data-them="themeLight"] {
+    .badge-themed {
+        background-color: theme-color("info");
+        color: theme-color("light");
+    }
+}
+

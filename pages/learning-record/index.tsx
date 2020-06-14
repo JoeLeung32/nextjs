@@ -3,11 +3,13 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
-import { getLearningRecordPostsSortedList } from '../../lib/learning-record-posts'
+import { Container } from 'react-bootstrap'
+import { getLearningRecordPostsSortedList } from '../../libs/learning-record-posts'
 import {
     LearningRecordListProvider,
     LearningRecordProvider,
 } from '../../interfaces/learningRecord'
+import { Wrapper } from '../../styled'
 
 const LearningRecordPostList = (data: LearningRecordListProvider) => {
     const { allPostsData } = data
@@ -16,26 +18,32 @@ const LearningRecordPostList = (data: LearningRecordListProvider) => {
             <Head>
                 <title>Next App</title>
             </Head>
-            <div onClick={() => Router.back()}>
-                <a>Go Back</a>
-            </div>
-            <h1>Learning Record</h1>
-            <ul>
-                {allPostsData.map((postData: LearningRecordProvider) => (
-                    <li key={postData.id}>
-                        <strong>{postData.title}</strong>
-                        <br />
-                        {postData.date}
-                        <br />
-                        <Link
-                            href={`/learning-record/post/[postId]`}
-                            as={`/learning-record/post/${postData.id}`}
-                        >
-                            <a>Read More...</a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <Wrapper>
+                <Container>
+                    <div onClick={() => Router.back()}>
+                        <a>Go Back</a>
+                    </div>
+                    <h1>Learning Record</h1>
+                    <ul>
+                        {allPostsData.map(
+                            (postData: LearningRecordProvider) => (
+                                <li key={postData.id}>
+                                    <strong>{postData.title}</strong>
+                                    <br />
+                                    {postData.date}
+                                    <br />
+                                    <Link
+                                        href={`/learning-record/post/[postId]`}
+                                        as={`/learning-record/post/${postData.id}`}
+                                    >
+                                        <a>Read More...</a>
+                                    </Link>
+                                </li>
+                            )
+                        )}
+                    </ul>
+                </Container>
+            </Wrapper>
         </>
     )
 }
