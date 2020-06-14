@@ -1,7 +1,7 @@
 ---
 title: 'Day 2'
 date: '2020-06-14'
-commits: 5fd3fceaa047dbd4478e8166694df3c585b33ff2, 29a0703ecbe9790fe5d2a557935f7c6dab7d7f7f, 2f50cb93b74fede527e7250757690a8a858fb0e8
+commits: 5fd3fceaa047dbd4478e8166694df3c585b33ff2, 29a0703ecbe9790fe5d2a557935f7c6dab7d7f7f, 2f50cb93b74fede527e7250757690a8a858fb0e8, 6e82051c85d7dc4754d152f0ea8fb84fc4381cbc
 ---
 
 昨日 Deploy 後發覺 console 有報 warning，pokemon 所有 *.js 檔都有問題，
