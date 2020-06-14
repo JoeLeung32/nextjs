@@ -12,10 +12,23 @@ body {
     align-items: stretch;
 }
 
+.card {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
 [data-them="themeDark"] {
     .badge-themed {
         background-color: theme-color("light");
         color: theme-color("dark");
+    }
+    pre {
+        color: #aaa
+    }
+    hr {
+        border-top-color: #aaa
+    }
+    .card {
+        background-color: theme-color("dark");
     }
 }
 [data-them="themeLight"] {

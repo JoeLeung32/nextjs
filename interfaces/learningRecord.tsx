@@ -3,6 +3,7 @@ export interface LearningRecordProvider {
     date: Date
     title: string
     content: string
+    commits: string
 }
 
 export interface LearningRecordListProvider {
