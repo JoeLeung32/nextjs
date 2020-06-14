@@ -1,5 +1,3 @@
-import path from 'path'
-import url from 'url'
 import cluster from 'cluster'
 import os from 'os'
 
