@@ -57,9 +57,14 @@
     "prettier": "2.0.5"
   },
   "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
     "extends": [
       "airbnb",
-      "react-app",
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:react/recommended",
@@ -69,7 +74,28 @@
       "prettier",
       "prettier/@typescript-eslint",
       "prettier/react"
-    ]
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ]
+        }
+      ]
+    }
   },
   "engines": {
     "node": ">=10.x <=12.18"
