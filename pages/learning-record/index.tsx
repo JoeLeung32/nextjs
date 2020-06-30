@@ -2,7 +2,6 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import Router from 'next/router'
 import { Container } from 'react-bootstrap'
 import { getLearningRecordPostsSortedList } from '../../libs/learning-record-posts'
 import {
@@ -10,6 +9,7 @@ import {
     LearningRecordProvider,
 } from '../../interfaces/learningRecord'
 import { Wrapper } from '../../styled'
+import BtnHistoryGoBack from '../../components/btnHistoryGoBack'
 
 const LearningRecordPostList = (data: LearningRecordListProvider) => {
     const { allPostsData } = data
@@ -20,9 +20,7 @@ const LearningRecordPostList = (data: LearningRecordListProvider) => {
             </Head>
             <Wrapper>
                 <Container>
-                    <div onClick={() => Router.back()}>
-                        <a>Go Back</a>
-                    </div>
+                    <BtnHistoryGoBack />
                     <h1>Learning Record</h1>
                     <ul>
                         {allPostsData.map(

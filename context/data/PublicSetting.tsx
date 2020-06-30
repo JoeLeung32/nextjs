@@ -3,30 +3,39 @@ interface ActionProvider {
     data: any
 }
 
+interface StateProvider {
+    theme: string
+    rehydrated: boolean
+}
+
 export interface PublicSettingProps {
-    settings: {
-        theme: string
-        rehydrated: boolean
-    }
+    settings: StateProvider
     settingDispatch: ({ type, data }: ActionProvider) => void
 }
 
 export const initialState = { theme: 'themeLight', rehydrated: false }
 
-export const reducer = (state: object, action: ActionProvider) => {
-    switch (action.type) {
-        case 'initial':
+export const reducer = (state: StateProvider, action: ActionProvider) => {
+    const { type, data } = action
+    switch (type) {
+        case 'initial': {
             return {
                 ...state,
-                ...action.data,
+                // ...(data as {}),
                 rehydrated: true,
             }
-        case 'setTheme':
+        }
+        case 'setTheme': {
             return {
                 ...state,
-                theme: action.data,
+                theme: data,
             }
-        default:
+            // return Object.assign({}, state, {
+            //     theme: data,
+            // })
+        }
+        default: {
             return state
+        }
     }
 }

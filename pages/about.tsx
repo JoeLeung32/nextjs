@@ -1,10 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
-import Router from 'next/router'
 import { Container } from 'react-bootstrap'
 import { GitHubProvider } from '../interfaces/github'
 import { TagAProvider } from '../interfaces/htmlElements'
 import { Wrapper } from '../styled'
+import BtnHistoryGoBack from '../components/btnHistoryGoBack'
 
 const AboutPage = ({ profile }: GitHubProvider) => {
     const displayValue = (data: any) => data || <span>--</span>
@@ -34,7 +34,7 @@ const AboutPage = ({ profile }: GitHubProvider) => {
                 href={url || `#`}
                 title={title || ``}
                 target={target || `_self`}
-                rel="noopener noreferrer nofollow"
+                rel={"noopener noreferrer nofollow"}
             >
                 {content || <span>--</span>}
             </a>
@@ -47,9 +47,7 @@ const AboutPage = ({ profile }: GitHubProvider) => {
             </Head>
             <Wrapper>
                 <Container>
-                    <div onClick={() => Router.back()}>
-                        <a>Go Back</a>
-                    </div>
+                    <BtnHistoryGoBack />
                     <h1>About Me</h1>
                     <img src={avatar_url} alt={name} />
                     <ul>
@@ -65,8 +63,8 @@ const AboutPage = ({ profile }: GitHubProvider) => {
                                 GitHub:{' '}
                                 <TagA
                                     url={html_url}
-                                    title={`GitHub`}
-                                    target={`_blank`}
+                                    title={"GitHub"}
+                                    target={"GitHub"}
                                     content={html_url}
                                 />
                             </li>
@@ -76,8 +74,8 @@ const AboutPage = ({ profile }: GitHubProvider) => {
                                 My WebSite:{' '}
                                 <TagA
                                     url={blog}
-                                    title={`My Website`}
-                                    target={`_blank`}
+                                    title={"My Website"}
+                                    target={"_blank"}
                                     content={blog}
                                 />
                             </li>

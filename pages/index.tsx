@@ -24,7 +24,7 @@ const appValues = [
 const HomePage = ({ pokemonList }: PokemonListProvider) => {
     const { settings, settingDispatch } = usePublicSetting()
     const capitalize = (text: string) =>
-        text.replace(/\b\w/g, function (m) {
+        text.replace(/\b\w/g, (m) => {
             return m.toUpperCase()
         })
     const funcPokemonOptionList = (link: PokemonProvider) => {
@@ -58,18 +58,18 @@ const HomePage = ({ pokemonList }: PokemonListProvider) => {
             </Head>
             <Wrapper data-them={settings.theme}>
                 <Container>
-                    <div className="btn-group">
-                        <div className="custom-control custom-switch">
+                    <div className={"btn-group"}>
+                        <div className={"custom-control custom-switch"}>
                             <input
-                                type="checkbox"
-                                className="custom-control-input"
-                                id="themeSwitcher"
+                                type={"checkbox"}
+                                className={"custom-control-input"}
+                                id={"themeSwitcher"}
                                 onChange={handleSwitcher}
                                 checked={settings.theme !== 'themeLight'}
                             />
                             <label
-                                className="custom-control-label"
-                                htmlFor="themeSwitcher"
+                                className={"custom-control-label"}
+                                htmlFor={"themeSwitcher"}
                             >
                                 Go Dark?
                             </label>
@@ -77,12 +77,12 @@ const HomePage = ({ pokemonList }: PokemonListProvider) => {
                     </div>
                     <h1>Welcome to Next.js!</h1>
                     <h4>App</h4>
-                    <ul className="list-unstyled list-inline">
+                    <ul className={"list-unstyled list-inline"}>
                         {appValues &&
                             appValues.map((d: string, idx: number) => (
                                 <li
-                                    className="list-inline-item badge badge-themed"
-                                    key={idx}
+                                    className={"list-inline-item badge badge-themed"}
+                                    key={idx.toString()}
                                 >
                                     {d}
                                 </li>
@@ -154,13 +154,13 @@ const HomePage = ({ pokemonList }: PokemonListProvider) => {
                         </li>
                         <li>
                             <strong>Pokemon</strong>
-                            <form className="form">
+                            <form className={"form"}>
                                 <select
-                                    className="custom-select"
-                                    defaultValue={`DEFAULT`}
+                                    className={"custom-select"}
+                                    defaultValue={"DEFAULT"}
                                     onChange={handleSelect}
                                 >
-                                    <option value={`DEFAULT`} disabled>
+                                    <option value={"DEFAULT"} disabled>
                                         Select your Pokes
                                     </option>
                                     {pokemonList.map(funcPokemonOptionList)}
@@ -194,8 +194,8 @@ const HomePage = ({ pokemonList }: PokemonListProvider) => {
                     <h4>GitHub</h4>
                     <a
                         href={`https://github.com/JoeLeung32/nextjs`}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
+                        target={"_blank"}
+                        rel={"noopener noreferrer nofollow"}
                     >
                         https://github.com/JoeLeung32/nextjs
                     </a>

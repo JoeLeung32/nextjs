@@ -9,7 +9,7 @@ import { Wrapper } from '../../styled'
 
 const PokemonPage = ({ pokemon }: any) => {
     const capitalize = (text: string) =>
-        text.replace(/\b\w/g, function (m) {
+        text.replace(/\b\w/g, (m) => {
             return m.toUpperCase()
         })
     return (

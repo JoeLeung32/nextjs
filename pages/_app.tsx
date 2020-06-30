@@ -9,7 +9,11 @@ import {
 
 import './_app.scss'
 
-const Context = ({ children }: any) => {
+interface ContextProvider {
+    children: JSX.Element[] | JSX.Element
+}
+
+const Context = ({ children }: ContextProvider) => {
     return <PublicSettingProvider>{children}</PublicSettingProvider>
 }
 
